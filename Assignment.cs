@@ -9,6 +9,6 @@ public class Assignment
     public string ModuleCode { get; set; } = string.Empty; // eg., Informatics = IFM03B3.
     public DateTime DueDate { get; set; } // When is the assignment due.
     public Status Status { get; set; } = Status.NotStarted; // Current progress. Initial value is NotStarted. {From the Status enum}.
-    public bool IsOverdue => Status != Status.Done && DueDate < DateTime.Now; // Assignment overdue if the status is not done and its past due date.
+    public bool IsOverdue => Status != Status.Done && DueDate.Date < DateTime.Today; // Assignment overdue if the status is not done and its past due date.
 
 }
